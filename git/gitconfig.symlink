@@ -1,0 +1,28 @@
+# gitconfig
+[user]
+    name = Aditya Kamble
+    email = adityakamble49@gmail.com
+[github]
+    user = adityakamble49
+[alias]
+    # list of all aliases
+    s = status --short
+    ss = status
+    br = branch -v
+    co = checkout
+    l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    c = commit -m
+
+    # show what I did today
+    day = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --after=\"yesterday 11:59PM\" --author=\"`git config --get user.name`\"'"
+
+    # show files by number of commits
+    churn = "!f() { git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count\tfile\"} {print $1 \"\t\" $2}' | sort -g; }; f"
+
+    # show all deleted files in the repo
+    deleted = "!git log --diff-filter=D --summary | grep delete"
+
+    # show number of commits per contributer, sorted
+    count = shortlog -sn
+[color]
+	ui = auto
