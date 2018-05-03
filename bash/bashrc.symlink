@@ -1,0 +1,10 @@
+export DOTFILES=$HOME/.dotfiles
+export BASH=$DOTFILES/bash
+# export TERM="xterm-256color"
+
+# source all the bash files inside of bash/ dir
+for file in $BASH/*.sh; do source $file; done
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/aditya/.sdkman"
+[[ -s "/home/aditya/.sdkman/bin/sdkman-init.sh" ]] && source "/home/aditya/.sdkman/bin/sdkman-init.sh"
