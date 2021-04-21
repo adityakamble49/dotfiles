@@ -1,5 +1,5 @@
 export DOTFILES=$HOME/.dotfiles
-export ZSH=$DOTFILES/zsh
+export ZSHRC=$DOTFILES/zshrc
 
 # source all the bash files inside of bash/ dir
-for file in $ZSH/*.sh; do source $file; done
+for file in $ZSHRC/*.sh; do source $file; done
